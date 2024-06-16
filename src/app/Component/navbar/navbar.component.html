@@ -1,25 +1,20 @@
-<p>navbar works!</p>
-<!-- bootstarp install -->
-<!-- npm i --save bootstarp //common install -->
-<!-- npm i -- save bootstarp@3 // with include bootstarp version -->
-<!-- npm uninstall bootstarp // uninstall bootstarp  -->
+<!-- One way data binding - String interpolation -->
+<p>Name: {{name}}</p>
+<p> Age : {{age}}</p>
 
-<!-- we add path in two way -->
-<!-- 1. style.ts top => @import '~../node-modules/bootstarp/list/css/bootstarp.min.css' -->
-<!-- 2. angular.json => 'styles': [
-"node-modules/bootstarp/list/css/bootstarp.min.css",
-] -->
+<p>Mobile Name : {{product.mname}}</p>
+<p>Price: {{product.price}}</p>
 
-<!--  -->
-<!-- adding fonts -->
-<!-- goto browser search google fonts => ex: => montserrat & conert one. -->
-<!-- style.css top => import link ah google la erunthu copy paste -->
+<!-- One way data binding - property binding -->
+<button [disabled]="name ==='sun'">add</button>
+<button [attr.aria-hidden]="">remove</button>
 
-<!--  -->
-<!-- adding fontaswome icons -->
-<!-- go to browser search font aswome icons => get start => enter email => we get url from mail & copy paste style.css top -->
+<!-- One way data binding - event binding -->
+<br>
+<input type="text" [value]="name" (input)="onChange()">
+<input type="text" (input)="onChangeSecondExample($event)">
+<p>current input value : {{name}}</p>
 
-
-<!--  -->
-<!-- componet creating using cli -->
-<!-- ng g c navbar  -->
+<button (click)="increment($event)" [disabled]="isAddToCartDisabled">+</button>
+<span>{{addtoCart}}</span>
+<button (click)="decrement($event)" [disabled]="isDecrementDisabled">-</button>
